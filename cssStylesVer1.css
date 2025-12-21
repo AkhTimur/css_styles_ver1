@@ -1,0 +1,621 @@
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/main_code_1.css");
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/main_code_2.css");
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/main_code_3.css");
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/main_code_4mob.css");
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* ===== 1. КАСТОМНЫЙ КУРСОР (DATA: URI) ===== */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* НИКАКИХ * { cursor: none !important; } — только явная замена курсора */
+/* Базовый курсор для всей страницы и основных контейнеров */
+
+html,
+body,
+.l-page,
+.l-content,
+.b-main,
+.b-content,
+.b-comments,
+.b-catalog_entry,
+.b-user_rate,
+.b-bubble,
+.b-topic,
+.b-entry,
+.b-poster,
+.b-menu,
+.b-menu_item,
+.b-link,
+a,
+button,
+input,
+textarea,
+select {
+  cursor: url('https://s4.iimage.su/s/07/th_gUQCErgxz2i8azOoPpVIj8lOsNIe1FJHN78UvK5C.png') 8 8, auto !important;
+}
+
+/* Подсветка при наведении на интерактивные элементы */
+a:hover,
+button:hover,
+input:hover,
+textarea:hover,
+select:hover,
+.b-catalog_entry:hover,
+.b-user_rate:hover,
+.b-bubble:hover,
+.b-button:hover,
+.b-menu_item:hover,
+.b-poster:hover,
+.b-topic:hover,
+.b-entry:hover {
+  cursor: url('https://s4.iimage.su/s/07/th_gY2cZTAxlrV8E5cvuGPcfIqCevkA0j5JHjVgS9Eu.png') 8 8, pointer !important;
+}
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* ===== 2. ФОН С ЭФФЕКТАМИ (ИСПРАВЛЕННЫЙ) ===== */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+body:after {
+  content: ""; /* ДОБАВИТЬ */
+  position: fixed; /* ДОБАВИТЬ */
+  top: 0; /* ДОБАВИТЬ */
+  left: 0; /* ДОБАВИТЬ */
+  width: 100%; /* ДОБАВИТЬ */
+  height: 100%; /* ДОБАВИТЬ */
+  background-image: url(https://i.postimg.cc/Sxw0Zyd2/99px-ru-wallpaper-318310-zakat-solnca-nad-nochnim-gorodom-anime-original-by.jpg);
+  background-size: 120% 120%;
+  animation: float 60s infinite linear;
+  z-index: -2; /* ФОН ПОД ВСЕМ */
+}
+
+@keyframes float {
+  0% { background-position: 0% 0%; }
+  25% { background-position: 100% 0%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* 3 Отскоки DVD */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+body:before {
+  content: "";
+  position: fixed;
+  width: 150px; /* Немного меньше чтобы меньше мешало */
+  height: 150px;
+  background-image: url(https://i.postimg.cc/KY2PjJdk/Kono-Suba-Megumin-Staff-pointer-Sweezy-Cursors.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: dvd-bounce 180s linear infinite;
+  pointer-events: none;
+  mix-blend-mode: screen; /* Лучше смешивается с фоном */
+}
+
+@keyframes dvd-bounce {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  /* 16 ОТСКОКОВ | СТРОГАЯ ФИЗИКА: каждый отскок логичен от предыдущего */
+  6.25%  { /* 1. Правый (Y=30%) */
+    transform: translate(calc(100vw - 151px), calc((100vh - 150px) * 0.3));
+  }
+  
+  12.50% { /* 2. Низ (X=20% от правого) */
+    transform: translate(calc((100vw - 150px) * 0.2), calc(100vh - 151px));
+  }
+  
+  18.75% { /* 3. Левый (Y=65%) */
+    transform: translate(1px, calc((100vh - 150px) * 0.65));
+  }
+  
+  25.00% { /* 4. Верх (X=75%) */
+    transform: translate(calc((100vw - 150px) * 0.75), 1px);
+  }
+  
+  31.25% { /* 5. Правый (Y=10%) */
+    transform: translate(calc(100vw - 151px), calc((100vh - 150px) * 0.1));
+  }
+  
+  37.50% { /* 6. Низ (X=80%) */
+    transform: translate(calc((100vw - 150px) * 0.8), calc(100vh - 151px));
+  }
+  
+  43.75% { /* 7. Левый (Y=25%) */
+    transform: translate(1px, calc((100vh - 150px) * 0.25));
+  }
+  
+  50.00% { /* 8. Верх (X=40%) */
+    transform: translate(calc((100vw - 150px) * 0.4), 1px);
+  }
+  
+  56.25% { /* 9. Правый (Y=45%) */
+    transform: translate(calc(100vw - 151px), calc((100vh - 150px) * 0.45));
+  }
+  
+  62.50% { /* 10. Низ (X=30% ЛОГИЧНО ОТ ПРАВОГО) */
+    transform: translate(calc((100vw - 150px) * 0.3), calc(100vh - 151px));
+  }
+  
+  68.75% { /* 11. Левый (Y=85%) */
+    transform: translate(1px, calc((100vh - 150px) * 0.85));
+  }
+  
+  75.00% { /* 12. Верх (X=90%) */
+    transform: translate(calc((100vw - 150px) * 0.9), 1px);
+  }
+  
+  81.25% { /* 13. Правый (Y=15%) */
+    transform: translate(calc(100vw - 151px), calc((100vh - 150px) * 0.15));
+  }
+  
+  87.50% { /* 14. Низ (X=70%) */
+    transform: translate(calc((100vw - 150px) * 0.7), calc(100vh - 151px));
+  }
+  
+  93.75% { /* 15. Левый (Y=40%) */
+    transform: translate(1px, calc((100vh - 150px) * 0.4));
+  }
+  
+  100.00% { /* 16. Верх (X=50%) */
+    transform: translate(calc((100vw - 150px) * 0.5), 1px);
+  }
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+  body:before {
+    width: 80px !important;
+    height: 80px !important;
+    animation-duration: 80s !important;
+  }
+  
+  body:after {
+    display: none !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* ===== 4. ПЛАВАЮЩИЕ БЛОКИ С МАЛЕНЬКОЙ ЗОНОЙ И ПОЛНЫМ ЭФФЕКТОМ ===== */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* 1. Отключаем стандартный hover на всей карточке */
+.b-catalog_entry:hover,
+.b-user_rate:hover,
+.b-bubble:hover {
+  transform: none !important;
+  z-index: auto !important;
+}
+
+/* 2. Базовая настройка карточек */
+.b-catalog_entry, 
+.b-user_rate, 
+.b-bubble {
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  position: relative !important;
+}
+
+/* 3 Зона редактирования */
+/* Поднимаем кнопку редактирования НАД всеми элементами */
+.edit-user_rate {
+  z-index: 100 !important;
+  position: absolute !important;
+  top: 5px !important;
+  right: 5px !important;
+  width: 24px !important;
+  height: 24px !important;
+  background: rgba(var(--hover-color), 0.9) !important;
+  border: 2px solid rgba(var(--nick-cover), 0.8) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: white !important;
+  font-weight: bold !important;
+  font-size: 12px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.2s ease !important;
+}
+
+.edit-user_rate:hover {
+  transform: scale(1.2) !important;
+  background: rgba(var(--hover-color), 1) !important;
+  box-shadow: 0 0 15px rgba(var(--hover-color), 0.8) !important;
+}
+
+/* А нашу зону делаем в левом нижнем углу */
+.b-catalog_entry .image-decor::after,
+.b-user_rate .image-decor::after,
+.b-bubble .image-decor::after {
+  content: '' !important;
+  position: absolute !important;
+  width: 6px !important;
+  height: 6px !important;
+  left: 10px !important;    /* Левый нижний угол */
+  bottom: 10px !important;
+  background: rgba(255, 153, 51, 0.3) !important;
+  border: 1px dashed rgba(255, 153, 51, 0.7) !important;
+  border-radius: 50% !important;
+  z-index: 5 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+/* 4. ПОЛНЫЙ ЭФФЕКТ при наведении на зону (через :has) */
+.b-catalog_entry:has(.image-decor:hover),
+.b-user_rate:has(.image-decor:hover), 
+.b-bubble:has(.image-decor:hover) {
+  transform: translateY(-10px) !important;
+  z-index: 100 !important;
+}
+
+/* 5. Обводка для карточек (как у тебя было) */
+.b-catalog_entry::before,
+.b-user_rate::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -5px !important;
+  left: -5px !important;
+  right: -5px !important;
+  bottom: -5px !important;
+  border: 1px solid rgba(var(--hover-color), 0) !important;
+  border-radius: 5px !important;
+  transition: all 0.3s ease !important;
+  z-index: -1 !important;
+}
+
+/* 6. Обводка при наведении на зону */
+.b-catalog_entry:has(.image-decor:hover)::before,
+.b-user_rate:has(.image-decor:hover)::before {
+  border-color: rgba(var(--hover-color), 0.5) !important;
+  box-shadow: 0 0 20px rgba(var(--hover-color), 0.3) !important;
+}
+
+/* 7. Добавим эффект для .b-bubble если нужно */
+.b-bubble::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -5px !important;
+  left: -5px !important;
+  right: -5px !important;
+  bottom: -5px !important;
+  border: 1px solid rgba(var(--hover-color), 0) !important;
+  border-radius: 5px !important;
+  transition: all 0.3s ease !important;
+  z-index: -1 !important;
+}
+
+.b-bubble:has(.image-decor:hover)::before {
+  border-color: rgba(var(--hover-color), 0.5) !important;
+  box-shadow: 0 0 20px rgba(var(--hover-color), 0.3) !important;
+}
+
+
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* ===== 5. МЕДИА-ЗАПРОС ДЛЯ ТВОИХ ПЕРЕМЕННЫХ ===== */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+@media screen and (min-width: 1px) {
+  .correct-mob-version {
+    color: inherit;
+  }
+}
+
+@media screen and (min-width: 1px) {
+  html:root {
+    --white-color: 219, 219, 219;
+    --light-color: 184, 184, 184;
+    --dark-color: 155, 155, 155;
+    --bright-color: 217, 217, 217;
+    --dull-color: 116, 116, 116;
+    --input-color: 120, 120, 120;
+    --hover-bottoms-1: 43, 43, 43;
+    --buttoms-color: 74, 74, 74;
+    --hover-buttoms-2: 140, 140, 140;
+    --very-high-rating: 156, 156, 156;
+    --high-rating: 105, 105, 105;
+    --average-rating: 82, 82, 82;
+    --small-rating: 64, 64, 64;
+    --time-filled: 92, 92, 92;
+    --time-empty: 43, 43, 43;
+    --anime-inprocess: 22, 24, 22;
+    --anime-complete: 16, 19, 17;
+    --manga-inprocess: 22, 24, 22;
+    --manga-complete: 16, 19, 17;
+    --hover-color: 255, 153, 51;
+    --shadows-color: 150, 150, 150;
+    --block-color: 69, 69, 69;
+    --menu-back: 10, 10, 10;
+    --nick-cover: 176, 12, 12;
+    --popup-color: 39, 39, 39;
+    --hundred: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* ===== 6. АДАПТИВНОСТЬ ===== */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+@media screen and (max-width: 768px) {
+  * {
+    cursor: auto !important;
+  }
+  
+  .cursor-dot, .cursor-ring {
+    display: none;
+  }
+  
+  .shikista:before, .shikista:after {
+    display: none;
+  }
+}
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* ===== 7 ЗАМОРОЗКА ПРОГРЕСС-БАРОВ ===== */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.bar,
+.bar *,
+[class*="bar-"],
+[class*="progress"],
+[style*="height:"] {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+
+
+
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* ===== 8 КОММЕНТАРИИ ПОДНИМАЮТСЯ С КАРТОЧКОЙ ===== */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* 1. Комментарий (.text) поднимается вместе с карточкой */
+.c-column.user_rate:hover .text {
+  transform: translateY(-15px) !important;
+  transition: transform 0.3s ease !important;
+  z-index: 101 !important;
+}
+
+
+/* 2. Эффект для комментария при наведении */
+.c-column.user_rate:hover .text {
+  background: rgba(var(--hover-color), 0.9) !important;
+  color: white !important;
+  border-radius: 5px !important;
+  padding: 5px 10px !important;
+  margin-top: 5px !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
+  transform: translateY(-15px) scale(1.05) !important;
+  font-weight: bold !important;
+}
+
+/* 3. Анимация появления комментария */
+.c-column.user_rate .text {
+  opacity: 0.8;
+  transition: all 0.3s ease !important;
+}
+
+.c-column.user_rate:hover .text {
+  opacity: 1 !important;
+  transform: translateY(-15px) scale(1.1) !important;
+}
+
+
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* 9 Неоновое свечение для подзаголовков */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.p-profiles-show .subheadline {
+    position: relative;
+    border: 1px solid transparent !important;
+}
+
+.p-profiles-show .subheadline:before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(90deg, 
+        rgba(255, 0, 204, 0.3),
+        rgba(51, 51, 255, 0.3),
+        rgba(0, 204, 255, 0.3));
+    background-size: 300% 300%;
+    border-radius: 13px;
+    z-index: -1;
+    animation: subheadlineGlow 4s ease infinite;
+}
+
+@keyframes subheadlineGlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+
+
+
+
+
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* 10 Простое неоновое свечение вокруг аватара */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.c-brief .avatar {
+    position: relative !important;
+}
+
+.c-brief .avatar img {
+    border: 3px solid transparent !important;
+    animation: neonBorder 3s linear infinite !important;
+    box-shadow: 
+        0 0 20px rgba(255, 0, 204, 0.5),
+        0 0 40px rgba(51, 51, 255, 0.3),
+        0 0 60px rgba(0, 204, 255, 0.2) !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+@keyframes neonBorder {
+    0% {
+        border-color: rgba(255, 0, 204, 0.8) !important;
+        box-shadow: 
+            0 0 20px rgba(255, 0, 204, 0.5),
+            0 0 40px rgba(255, 0, 204, 0.3) !important;
+    }
+    33% {
+        border-color: rgba(51, 51, 255, 0.8) !important;
+        box-shadow: 
+            0 0 20px rgba(51, 51, 255, 0.5),
+            0 0 40px rgba(51, 51, 255, 0.3) !important;
+    }
+    66% {
+        border-color: rgba(0, 204, 255, 0.8) !important;
+        box-shadow: 
+            0 0 20px rgba(0, 204, 255, 0.5),
+            0 0 40px rgba(0, 204, 255, 0.3) !important;
+    }
+    100% {
+        border-color: rgba(255, 0, 204, 0.8) !important;
+        box-shadow: 
+            0 0 20px rgba(255, 0, 204, 0.5),
+            0 0 40px rgba(255, 0, 204, 0.3) !important;
+    }
+}
+
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* 11 Гифка как фон для раздела "Обо мне" */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
+.p-profiles-show .about {
+    position: relative !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    padding: 15px !important;
+}
+
+.p-profiles-show .about:before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-image: url('https://i.postimg.cc/XqJyZ9pg/2q-Nos9e.gif') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    opacity: 0.65 !important;
+    z-index: -1 !important;
+    filter: blur(1px) !important;
+}
+
+/* Или анимированный градиент */
+
+
+.p-profiles-show .about:after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 0, 204, 0.1),
+        rgba(51, 51, 255, 0.1),
+        rgba(0, 204, 255, 0.1)
+    ) !important;
+    background-size: 400% 400% !important;
+    animation: gradientMove 8s ease infinite !important;
+    z-index: -1 !important;
+    opacity: 0.7 !important;
+}
+
+@keyframes gradientMove {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* 12 Переименование списка аниме и манги */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* User Custom Styles */
+
+/* Для списка аниме */
+.profile-head .b-stats_bar.anime .title {
+    font-size: 0 !important;
+}
+
+.profile-head .b-stats_bar.anime .title:after {
+    content: "Список анимированных сериалов и фильмов";
+    font-size: 14px !important;
+}
+
+/* Для списка манги */
+.profile-head .b-stats_bar.manga .title {
+    font-size: 0 !important;
+}
+
+.profile-head .b-stats_bar.manga .title:after {
+    content: "Список манги";
+    font-size: 14px !important;
+}
+
+
