@@ -1,0 +1,91 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+achievments
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+.b-achievement .c-image a::after,
+.b-badge::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--image, none);
+  pointer-events: none;
+}
+.level-4 [href*="/achievements/genre/romance"] {
+  --image: url("//i.imgur.com/aEnmeja.gif") center / cover;
+}
+.level-4 [href*="/achievements/genre/supernatural"] {
+  --image: url("//i.imgur.com/ayEVYT0.gif") center / cover;
+}
+.level-1 [href*="/achievements/common/stop_motion"] {
+  --image: url("//i.imgur.com/K5GmlfJ.gif") center / cover;
+}
+.level-1 [href*="/achievements/common/sovietanime"] {
+  --image: url("//i.imgur.com/s3zKsl3.gif") center / cover;
+}
+.level-3 [href*="/achievements/common/moe"] {
+  --image: url("//i.imgur.com/Q2grU5t.gif") center / cover;
+}
+.level-4 [href*="/achievements/genre/music"] {
+  --image: url("//i.imgur.com/EOX9sqa.gif") center / cover;
+}
+.level-4 [href*="/achievements/genre/josei"] {
+  --image: url("//i.imgur.com/53gAucb.gif") center / cover;
+}
+.level-1 [href*="/achievements/common/world_masterpiece_theater"] {
+  --image: url("//i.imgur.com/vFW1CmB.gif") center / cover;
+}
+.level-4 [href*="/achievements/common/otaku"] {
+  --image: url("//i.imgur.com/G56KMW6.gif") center / cover;
+}
+.level-4 [href*="/achievements/genre/mecha"] {
+  --image: url("//i.imgur.com/Dw7BJkn.gif") center / cover;
+}
+.level-4 [href*="/achievements/genre/mahou_shoujo"] {
+  --image: url("//i.imgur.com/u9ocV2h.gif") center / cover;
+}
+.level-3 [href*="/achievements/common/gar"] {
+  --image: url("//i.imgur.com/JTiqM2b.gif") center / cover;
+}
+.level-3 [href*="/achievements/common/yandere"] {
+  --image: url("//i.imgur.com/TEuRtmr.gif") center / cover;
+}
+.level-3 [href*="/achievements/common/tsundere"] {
+  --image: url("//i.imgur.com/5VPqH0K.gif") center / cover;
+}
+.level-4 [href*="/achievements/genre/drama"] {
+  --image: url("//i.imgur.com/IYIRbxg.gif") center / cover;
+}
+.level-4 [href*="/achievements/genre/sports"] {
+  --image: url("//i.imgur.com/H65Qp4a.gif") center / cover;
+}
+.level-3 [href*="/achievements/common/genki"] {
+  --image: url("//i.imgur.com/kQtucwz.gif") center / cover;
+}
+.level-1 [href*="/achievements/common/oniichan"] {
+  --image: url("//i.imgur.com/Jr7pZxN.gif") center / cover;
+}
+.level-4 [href*="/achievements/genre/historical"] {
+  --image: url("//i.imgur.com/eYaWHo3.jpeg") center / cover;
+}
+.level-2 [href*="/achievements/common/longshounen"] {
+  --image: url("//i.imgur.com/xrqZR4q.gif") center / cover;
+}
+.level-4 [href*="/achievements/genre/horror_thriller"] {
+  --image: url("//i.imgur.com/cDBLESE.gif") center / cover;
+}
+.level-4 [href*="/achievements/common/shortie"] {
+  --image: url("//i.imgur.com/ySaMpp3.gif") center / cover;
+}
+.level-1 [href*="/achievements/genre/comedy"] {
+  --image: url("//i.imgur.com/cup4ZAS.gif") center / cover;
+}
+.level-3 [href*="/achievements/common/kuudere"] {
+  --image: url("//i.imgur.com/kLpGjXP.gif") center / cover;
+}
+.level-4 [href*="/achievements/genre/military"] {
+  --image: url("//i.imgur.com/yglROh8.gif") center / cover;
+}
+}
